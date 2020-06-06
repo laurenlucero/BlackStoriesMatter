@@ -2,28 +2,28 @@ export const test = async () => {
   const response = await fetch(
     "https://reststop.randomhouse.com/resources/authors?lastName=Woodson&firstName=Jacqueline"
   );
-  let xmlData = await response.text();
 
+  let xmlData = await response.text();
   let convert = require("xml-js");
 
-  let object = convert.xml2json(xmlData, {
+  let jsonData = convert.xml2json(xmlData, {
     compact: true,
     trim: true,
     spaces: 1,
   });
-  
-  let parsedObj = JSON.parse(object)
-  console.log(parsedObj);
 
-  let isbnArr = parsedObj['authors'].author.map((a) => a.titles.hasOwnProperty('isbn') && a.titles.isbn.map(isbn => isbn._text));
-  console.log(isbnArr);
+  let parsedData = JSON.parse(jsonData);
+  console.log(parsedData);
 
+  let isbns = parsedData.authors.author.map(
+    (a) =>
+      a.titles.hasOwnProperty("isbn") && a.titles.isbn.map((isbn) => isbn._text)
+  );
+  console.log(isbns);
 
-
-  let filterArr = isbnArr.filter(a => a)
-  
-  filterArr = [].concat.apply([], filterArr)
-  console.log(filterArr)
+  let filteredIsbns = isbns.filter((a) => a);
+  filteredIsbns = [].concat.apply([], filteredIsbns);
+  console.log(filteredIsbns);
 };
 
 // .then((response) => response.text())
