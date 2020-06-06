@@ -2,11 +2,14 @@ import React, { Component } from "react";
 import Header from "../Header/Header";
 import styled from "styled-components";
 import { GlobalStyle } from "../../theme/globalStyle";
+import { test } from "../../apiCalls";
 
 const Wrapper = styled.div`
   height: 100%;
   width: 100%;
 `;
+
+test();
 
 class App extends Component {
   constructor(props) {
