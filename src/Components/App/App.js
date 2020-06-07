@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "../Header/Header";
+import Login from "../Login/Login";
 import styled from "styled-components";
 import { GlobalStyle } from "../../theme/globalStyle";
 import { fetchIsbns, fetchTitles } from "../../apiCalls";
@@ -68,6 +69,7 @@ class App extends Component {
     return (
       <Wrapper>
         <Header />
+        <Login />
       </Wrapper>
     );
   }
