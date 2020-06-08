@@ -48,7 +48,8 @@ class App extends Component {
           this.setState({ bookInfo: [...this.state.bookInfo, ...result] })
         )
         .then(() => this.filterFormats())
-        .then(() => this.removeDuplicates());
+        .then(() => this.removeDuplicates())
+        .then(() => this.sortAlphabetically());
     });
   };
 
@@ -66,6 +67,13 @@ class App extends Component {
       return this.state.bookInfo.find((book) => book.title === title);
     });
     this.setState({ bookInfo: [...uniqueTitles] });
+  };
+
+  sortAlphabetically = () => {
+    let alphabetical = this.state.bookInfo.sort((a, b) =>
+      a.title > b.title ? 1 : -1
+    );
+    this.setState({ bookInfo: [...alphabetical] });
   };
 
   setUser = (user) => {
