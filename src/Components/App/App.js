@@ -72,11 +72,15 @@ class App extends Component {
     this.setState({ user: user });
   };
 
+  resetUser = () => {
+    this.setState({ user: "" });
+  };
+
   render() {
     return (
       <ThemeProvider theme={theme}>
         <Wrapper>
-          <Header />
+          <Header user={this.state.user} resetUser={this.resetUser} />
           <Route
             exact
             path="/"
@@ -88,7 +92,7 @@ class App extends Component {
             exact
             path="/Books"
             render={() => {
-              return <BookContainer user={this.state.user} />;
+              return <BookContainer />;
             }}
           />
         </Wrapper>
