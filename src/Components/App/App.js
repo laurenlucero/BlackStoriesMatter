@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Header from "../Header/Header";
 import Login from "../Login/Login";
-import styled from "styled-components";
-import { GlobalStyle } from "../../theme/globalStyle";
+import BookContainer from "../BookContainer/BookContainer";
+import styled, { ThemeProvider } from "styled-components";
+import { GlobalStyle, theme } from "../../theme/globalStyle";
 import { fetchIsbns, fetchTitles } from "../../apiCalls";
+import { Route } from "react-router-dom";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -24,6 +26,7 @@ class App extends Component {
       ],
       allIsbns: [],
       bookInfo: [],
+      user: "",
     };
   }
 
@@ -65,12 +68,32 @@ class App extends Component {
     this.setState({ bookInfo: [...uniqueTitles] });
   };
 
+  setUser = (user) => {
+    this.setState({ user: user });
+  };
+
   render() {
     return (
-      <Wrapper>
-        <Header />
-        <Login />
-      </Wrapper>
+      <ThemeProvider theme={theme}>
+        <Wrapper>
+          <Header />
+          <Route
+            exact
+            path="/"
+            render={() => {
+              return <Login setUser={this.setUser} />;
+            }}
+          />
+          <Route
+            exact
+            path="/Books"
+            render={() => {
+              return <BookContainer user={this.state.user} />;
+            }}
+          />
+        </Wrapper>
+        <GlobalStyle />
+      </ThemeProvider>
     );
   }
 }
