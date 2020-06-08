@@ -92,7 +92,7 @@ class App extends Component {
             exact
             path="/Books"
             render={() => {
-              return <BookContainer />;
+              return <BookContainer bookInfo={this.state.bookInfo} />;
             }}
           />
         </Wrapper>
