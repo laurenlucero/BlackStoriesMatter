@@ -5,6 +5,30 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 0.5em;
+
+  h2, h3 {
+    margin-bottom: .5em;
+  }
+
+  p {
+    margin: 0.2em;
+  }
+
+form {
+  border: solid black 2px;
+  justify-content: center;
+}
+
+  input {
+    border: none;
+    padding: .2em;
+    margin: .2em;
+  }
+
+  button {
+    border: none;
+  }
 `;
 
 const Login = (props) => {
@@ -28,10 +52,10 @@ const Login = (props) => {
 
   return (
     <Wrapper>
-      <h2>Welcome to Black Stories Matter!</h2>
+      <h2>Welcome to BSM!</h2>
       <h3>
-        Our mission is to share books by Black authors for readers to find
-        mirrors & windows in.
+        Our mission is to share books by Black authors where readers can find
+        mirrors & windows.
       </h3>
       <h4>What are mirrors & windows?</h4>
       <p>
@@ -48,8 +72,8 @@ const Login = (props) => {
         requesting them at libraries, or donating copies to schools & community
         centers!
       </p>
-      <h4>Login to find stories!</h4>
       <form>
+      <h4>Login to find stories!</h4>
         <label htmlFor="username">Enter your username: </label>
         <input
           id="username"
@@ -73,7 +97,6 @@ const Login = (props) => {
           <option value="''">- Please share why you are here -</option>
           <option value="Mirrors">Mirrors</option>
           <option value="Windows">Windows</option>
-          <option value="Both">Both</option>
         </select>
         <p>{error}</p>
         <Link to={checkInputs() ? "/Books" : "/"}>

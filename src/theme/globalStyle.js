@@ -14,6 +14,20 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
   }
+
+  body {
+    font-family: 'Ubuntu', sans-serif;;
+  }
+
+  h1 {
+    margin: .25em;
+  }
+
 `;
 
-export const theme = {};
+export const theme = {
+  background: "#fff255",
+  text: "#0B0C20",
+  complement: "#5562FF", 
+  light: "#FFFDEA",
+};
