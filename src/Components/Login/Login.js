@@ -23,7 +23,7 @@ const Login = (props) => {
           username: username,
           purpose: purpose,
         })
-      : setError("Please complete all inputs to login.");
+      : setError("Please complete all inputs.");
   };
 
   return (
@@ -59,7 +59,7 @@ const Login = (props) => {
           onChange={(e) => setUsername(e.target.value)}
         />
         <br />
-        <label htmlFor="password">Enter your username: </label>
+        <label htmlFor="password">Enter your password: </label>
         <input
           id="password"
           name="password"
@@ -70,13 +70,13 @@ const Login = (props) => {
         <br />
         <label htmlFor="purpose">Are you looking for mirrors or windows?</label>
         <select id="purpose" onChange={(e) => setPurpose(e.target.value)}>
-          <option value="''"> - Please share why you are here - </option>
+          <option value="''">- Please share why you are here -</option>
           <option value="Mirrors">Mirrors</option>
           <option value="Windows">Windows</option>
           <option value="Both">Both</option>
         </select>
         <p>{error}</p>
-        <Link to={checkInputs() && "/Books"}>
+        <Link to={checkInputs() ? "/Books" : "/"}>
           <button onClick={handleClick}>Login</button>
         </Link>
       </form>
