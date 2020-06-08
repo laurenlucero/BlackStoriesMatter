@@ -15,3 +15,5 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 `;
+
+export const theme = {};
