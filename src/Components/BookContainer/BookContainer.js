@@ -1,6 +1,24 @@
 import React, { Component } from "react";
 import BookPreview from "../BookPreview/BookPreview";
 import styled from "styled-components";
+import { theme } from "../../theme/globalStyle";
+
+const { black, grey, orange, white, yellow } = theme;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em;
+
+  select {
+    background: ${white};
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 1px ${black};
+    cursor: pointer;
+    padding: 0.5em;
+  }
+`;
 
 class BookContainer extends Component {
   constructor(props) {
@@ -8,7 +26,7 @@ class BookContainer extends Component {
     this.state = {
       filteredByAuthor: [],
       favorites: [],
-      favoritesIDs: [],
+      favoritesIds: [],
       useFavorites: false,
     };
   }
@@ -19,6 +37,9 @@ class BookContainer extends Component {
         filteredByAuthor: [...this.props.bookInfo],
         useFavorites: false,
       });
+    }
+    if (e.target.value === "Favorites") {
+      return this.displayFavorites();
     }
     let filteredAuthors = this.props.bookInfo.filter((book) => {
       if (book.authorName.includes(e.target.value)) {
@@ -31,16 +52,53 @@ class BookContainer extends Component {
     });
   };
 
+  toggleFavorites = (id) => {
+    if (!this.state.favorites.includes(id)) {
+      this.setState({ favoritesIds: [...this.state.favoritesIds, id] });
+    } else {
+      let newFavoritesIds = this.state.favoritesIds.filter((favorite) => {
+        return favorite !== id;
+      });
+      let newFavorites = this.state.favorites.filter((favorite) => {
+        return favorite.id !== id;
+      });
+      this.setState({
+        favoritesIds: newFavoritesIds,
+        favorites: newFavorites,
+      });
+    }
+  };
+
+  displayFavorites = () => {
+    let matchedBooks = this.props.bookInfo.filter((book) => {
+      let match = this.state.favoritesIds.find((id) => {
+        return book.id === id;
+      });
+      return match;
+    });
+    this.setState({ favorites: matchedBooks, useFavorites: true });
+  };
+
   render() {
     let data;
     if (!this.state.useFavorites) {
       data = this.state.filteredByAuthor;
+    } else if (this.state.useFavorites) {
+      data = this.state.favorites;
     }
-    const books = data.map((book, i) => {
-      return <BookPreview key={book[i]} {...book} />;
+    const books = data.map((book) => {
+      return (
+        <BookPreview
+          key={book.isbn}
+          id={book.isbn}
+          {...book}
+          favorite={this.favorite}
+          toggleFavorites={this.toggleFavorites}
+        />
+      );
     });
     return (
-      <div>
+      <Wrapper>
         <div>
           <label htmlFor="filter">Filter books: </label>
           <select
@@ -61,7 +119,7 @@ class BookContainer extends Component {
           </select>
         </div>
         {books}
-      </div>
+      </Wrapper>
     );
   }
 }
