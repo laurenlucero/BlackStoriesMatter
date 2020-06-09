@@ -10,7 +10,7 @@ Turing School of Software & Design Module 3 Final Solo Project
     - Testing
 - We were required to use an open API that did not require OAuth or have CORS and choose an audience. I chose to use the Penguin Random House Rest Services API to get data about books and authors.
    - My goal was to showcase books by Black authors with a focus on children's literature. The audience is educators, families and youth. Black users can find “Mirrors”, stories they see themselves in. Other users visit for “Windows”, stories that give them a look into another experience. 
-- My application displays titles, authors and illustrators from the API. Users can favorite books and filter by author.
+- Users needed to be able to manipulate the data. My application displays titles, authors and illustrators from the API. Users can favorite books and filter by author.
 
 ## Wins
 This current iteration of this project is a proof of concept that I will continue building on. I deepened my understanding of React architecture, Router, Asynchronous JavaScript, styled-components and testing. This project was designed mobile-first and has an accessibility score of 100.
