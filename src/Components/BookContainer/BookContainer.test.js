@@ -21,7 +21,7 @@ describe("BookContainer", () => {
       {
         authorName: "Jacqueline Woodson",
         formatCode: "HC",
-        isbn: "9780399246548",
+        id: "9780399246548",
         title: "AFTER TUPAC & D FOSTER",
       },
     ];
