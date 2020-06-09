@@ -7,10 +7,11 @@ const Header = (props) => {
     return (
       <div>
         <p>
-          Welcome, {props.user.username}. We hope you find {props.user.purpose} in our stories!
+          Welcome, {props.user.username}. 
+          We hope you find {props.user.purpose} in our stories!
         </p>
         <Link to="/">
-        <button onClick={() => props.resetUser()}>Logout</button>
+          <button onClick={() => props.resetUser()}>Logout</button>
         </Link>
       </div>
     );

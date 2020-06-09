@@ -21,7 +21,7 @@ class App extends Component {
         ["Copeland", "Misty"],
         ["Grimes", "Nikki"],
         ["Johnson", "Angela"],
-        ["Mckissack", "Patricia"],
+        ["McKissack", "Patricia"],
         ["Woodson", "Jacqueline"],
       ],
       allIsbns: [],
