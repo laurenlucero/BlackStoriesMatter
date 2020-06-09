@@ -3,46 +3,56 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { theme } from "../../theme/globalStyle";
 
-const { blue, error, light, text, yellow } = theme;
+const { black, grey, orange, white, yellow } = theme;
 
 const Wrapper = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 0.5em;
-  align-items: center;
   justify-content: center;
-
-  h2,
-  h3 {
-    margin-bottom: 0.5em;
-  }
+  margin: 0.5em;
 
   p {
-    margin: 0.2em;
+    margin: 0.5em;
   }
 
   form {
-    border: solid ${text} 1px;
-    border-radius: 2px;
-    width: 75%;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    color: ${black};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
   }
 
   label {
-    margin: 0.2em;
+    margin: 0.1em;
   }
 
-  input {
+  input,
+  select {
+    background: ${white};
+    border-radius: 5px;
     border: none;
-    padding: 0.2em;
+    box-shadow: 1px 1px 1px ${black};
+    cursor: pointer;
+    padding: 0.5em;
   }
 
   button {
-    border: none;
+    background: ${yellow};
+    border-radius: 5px;
+    border: solid ${black} 0.5px;
+    box-shadow: 2px 2px 2px ${black};
+    cursor: pointer;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.2em;
+    padding: 0.5em;
   }
-`;
-
-const Error = styled.p`
-  color: ${blue};
 `;
 
 const Login = (props) => {
@@ -86,8 +96,8 @@ const Login = (props) => {
         requesting them at libraries, or donating copies to schools & community
         centers!
       </p>
+      <h3>Login to find stories!</h3>
       <form>
-        <h4>Login to find stories!</h4>
         <label htmlFor="username">Enter your username: </label>
         <input
           id="username"
@@ -112,7 +122,7 @@ const Login = (props) => {
           <option value="Mirrors">Mirrors</option>
           <option value="Windows">Windows</option>
         </select>
-        <Error>{error}</Error>
+        <p>{error}</p>
         <Link to={checkInputs() ? "/Books" : "/"}>
           <button onClick={handleClick}>Login</button>
         </Link>

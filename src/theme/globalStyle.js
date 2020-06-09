@@ -16,8 +16,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #FFFDEA;
-    color: #0B0C20;
+    background-image: radial-gradient(#FFF3AC, #FFDE22);
+    color: #1D1E22;
     font-family: 'Ubuntu', sans-serif;
   }
 
@@ -28,9 +28,9 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const theme = {
-  blue: "#5562FF",
-  error: "#FF5562",
-  light: "#FFFDEA",
-  text: "#0B0C20",
-  yellow: "#fff255",
+  black: "#1D1E22",
+  grey: "#DFDCE3",
+  orange: "#FF8928",
+  white: "#FFFFFF",
+  yellow: "#FFDE22",
 };
