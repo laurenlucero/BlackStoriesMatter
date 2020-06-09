@@ -13,7 +13,7 @@ Turing School of Software & Design Module 3 Final Solo Project
 - Users needed to be able to manipulate the data. My application displays titles, authors and illustrators from the API. Users can favorite books and filter by author.
 
 ## Wins
-This current iteration of this project is a proof of concept that I will continue building on. I deepened my understanding of React architecture, Router, Asynchronous JavaScript, styled-components and testing. This project was designed mobile-first and has an accessibility score of 100.
+This current iteration of this project is a proof of concept that I will continue building on. I deepened my understanding of React architecture, Router, Asynchronous JavaScript, styled-components and testing. I learned how to parse XML into JavaScript objects. This project was designed mobile-first and has an accessibility score of 100.
 
 ## Challenges
 Working with the available book APIs to get the data I wanted was my biggest roadblock. Unfortunately, many of the authors I wanted to showcase were not available since the API only had author's published by Random House. I was unable to get cover images of the books through the available APIs. I also have room to expand my testing, specifically asynchronous functionality and sad paths, and would like to refactor to improve performance. 
@@ -21,6 +21,10 @@ Working with the available book APIs to get the data I wanted was my biggest roa
 ## Future Iterations
 This project piqued my interest in building my own API. I want to create a database of Black children's books and authors that includes titles, authors, illustrators, cover images, summaries, age ranges, genres and links to author websites.
 Future iterations will have more informative and visually pleasing book previews. Users will be able to filter not only by author but also by illustrator, age range and genre. Users will be able to add books to a reading list as well as mark favorites. I also want to create digital wireframes for this project and include media queries for desktop display.
+
+## Proof of Concept in Action
+![screenshot]()
+![gif](https://media.giphy.com/media/SXCY6nu8Xszv4u9qUm/giphy.gif)
 
 ## Installation
 Clone this repo into an empty directory on your local machine.
