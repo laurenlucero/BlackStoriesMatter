@@ -13,8 +13,10 @@ const Wrapper = styled.div`
   justify-content: center;
   margin: 0.5em;
 
+  h2,
+  h4,
   p {
-    margin: 0.5em;
+    margin: 0.3em;
   }
 
   form {
