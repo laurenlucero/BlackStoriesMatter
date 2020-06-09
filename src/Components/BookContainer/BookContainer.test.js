@@ -1,0 +1,37 @@
+import React from "react";
+import BookContainer from "./BookContainer";
+import { cleanup, fireEvent, render } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+import { MemoryRouter as Router } from "react-router-dom";
+
+describe("BookContainer", () => {
+  afterEach(cleanup);
+
+  it("should render BookContainer", () => {
+    const { getByLabelText } = render(
+      <Router>
+        <BookContainer />
+      </Router>
+    );
+    expect(getByLabelText("Filter books:")).toBeInTheDocument();
+  });
+
+  it("should filter books on select change", async () => {
+    const mockBookInfo = [
+      {
+        authorName: "Jacqueline Woodson",
+        formatCode: "HC",
+        isbn: "9780399246548",
+        title: "AFTER TUPAC & D FOSTER",
+      },
+    ];
+    const { getByText, getByLabelText } = render(
+      <Router>
+        <BookContainer bookInfo={mockBookInfo} />
+      </Router>
+    );
+    const filter = getByLabelText("Filter books:");
+    fireEvent.change(filter, { target: { value: "Jacqueline Woodson" } });
+    expect(getByText("AFTER TUPAC & D FOSTER")).toBeInTheDocument();
+  });
+});
