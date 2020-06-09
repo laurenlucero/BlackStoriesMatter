@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import { fetchIsbns, fetchTitles } from "../../apiCalls";
+import { GlobalStyle, theme } from "../../theme/globalStyle";
+import { Route } from "react-router-dom";
+import BookContainer from "../BookContainer/BookContainer";
 import Header from "../Header/Header";
 import Login from "../Login/Login";
-import BookContainer from "../BookContainer/BookContainer";
+import React, { Component } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import { GlobalStyle, theme } from "../../theme/globalStyle";
-import { fetchIsbns, fetchTitles } from "../../apiCalls";
-import { Route } from "react-router-dom";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -21,7 +21,7 @@ class App extends Component {
         ["Copeland", "Misty"],
         ["Grimes", "Nikki"],
         ["Johnson", "Angela"],
-        ["Mckissack", "Patricia"],
+        ["McKissack", "Patricia"],
         ["Woodson", "Jacqueline"],
       ],
       allIsbns: [],
@@ -48,7 +48,8 @@ class App extends Component {
           this.setState({ bookInfo: [...this.state.bookInfo, ...result] })
         )
         .then(() => this.filterFormats())
-        .then(() => this.removeDuplicates());
+        .then(() => this.removeDuplicates())
+        .then(() => this.sortAlphabetically());
     });
   };
 
@@ -66,6 +67,13 @@ class App extends Component {
       return this.state.bookInfo.find((book) => book.title === title);
     });
     this.setState({ bookInfo: [...uniqueTitles] });
+  };
+
+  sortAlphabetically = () => {
+    let alphabetical = this.state.bookInfo.sort((a, b) =>
+      a.title > b.title ? 1 : -1
+    );
+    this.setState({ bookInfo: [...alphabetical] });
   };
 
   setUser = (user) => {

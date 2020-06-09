@@ -1,8 +1,8 @@
-import React from "react";
-import Login from "./Login";
-import { cleanup, fireEvent, render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
+import { cleanup, fireEvent, render } from "@testing-library/react";
 import { MemoryRouter as Router } from "react-router-dom";
+import Login from "./Login";
+import React from "react";
 
 describe("Login", () => {
   afterEach(cleanup);
@@ -13,7 +13,7 @@ describe("Login", () => {
         <Login />
       </Router>
     );
-    expect(getByText("Welcome to Black Stories Matter!")).toBeInTheDocument();
+    expect(getByText("Welcome to BSM!")).toBeInTheDocument();
     expect(getByLabelText("Enter your username:")).toBeInTheDocument();
   });
 
@@ -52,7 +52,7 @@ describe("Login", () => {
     });
     fireEvent.change(
       getByLabelText("Are you looking for mirrors or windows?"),
-      { target: { value: "Windows" } }
+      { target: { value: "windows" } }
     );
     fireEvent.click(getByText("Login"));
     expect(mockSetUser).toHaveBeenCalledTimes(1);

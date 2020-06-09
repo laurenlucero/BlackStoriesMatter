@@ -9,14 +9,15 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   
-  html,
-  #root {
-    width: 100%;
+  html {
     height: 100%;
+    width: 100%;
   }
 
   body {
-    font-family: 'Ubuntu', sans-serif;;
+    background-image: radial-gradient(#FFF3AC, #FFDE22);
+    color: #1D1E22;
+    font-family: 'Ubuntu', sans-serif;
   }
 
   h1 {
@@ -26,8 +27,9 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const theme = {
-  background: "#fff255",
-  text: "#0B0C20",
-  complement: "#5562FF", 
-  light: "#FFFDEA",
+  black: "#1D1E22",
+  grey: "#DFDCE3",
+  orange: "#FF8928",
+  white: "#FFFFFF",
+  yellow: "#FFDE22",
 };

@@ -38,7 +38,7 @@ export const fetchTitles = async (isbn) => {
     {
       authorName: parsedData.title.authorweb._text,
       formatCode: parsedData.title.formatcode._text,
-      summary: parsedData.title.keyword._text,
+      id: parsedData.title.isbn._text,
       title: parsedData.title.titleshort._text,
     },
   ];

@@ -1,33 +1,60 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { theme } from "../../theme/globalStyle";
+import PropTypes from "prop-types";
+import React, { useState } from "react";
 import styled from "styled-components";
 
+const { black, white, yellow } = theme;
+
 const Wrapper = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin: 0.5em;
 
-  h2, h3 {
-    margin-bottom: .5em;
-  }
-
+  h2,
+  h4,
   p {
-    margin: 0.2em;
+    margin: 0.3em;
   }
 
-form {
-  border: solid black 2px;
-  justify-content: center;
-}
-
-  input {
+  form {
+    align-items: center;
+    border-radius: 5px;
     border: none;
-    padding: .2em;
-    margin: .2em;
+    color: ${black};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+  }
+
+  label {
+    margin: 0.1em;
+  }
+
+  input,
+  select {
+    background: ${white};
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 1px ${black};
+    cursor: pointer;
+    padding: 0.5em;
   }
 
   button {
-    border: none;
+    background: ${yellow};
+    border-radius: 5px;
+    border: solid ${black} 0.5px;
+    box-shadow: 2px 2px 2px ${black};
+    cursor: pointer;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.2em;
+    padding: 0.5em;
   }
 `;
 
@@ -55,25 +82,25 @@ const Login = (props) => {
       <h2>Welcome to BSM!</h2>
       <h3>
         Our mission is to share books by Black authors where readers can find
-        mirrors & windows.
+        mirrors and windows.
       </h3>
-      <h4>What are mirrors & windows?</h4>
+      <h4>What are mirrors and windows in books?</h4>
       <p>
-        Mirrors reflect a reader's own life. Seeing yourself, your family & your
-        culture being valued in the world of a book provides a powerful sense of
-        belonging.
+        Mirrors reflect a reader's own life. Seeing yourself, your family and
+        your culture being valued in the world of a book provides a powerful
+        sense of belonging.
       </p>
       <p>
         Books that are windows offer views into other experiences. Windows teach
-        people to understand & appreciate differences.
+        people to understand and appreciate differences.
       </p>
       <p>
         Please support the Black authors you find here by buying their books,
-        requesting them at libraries, or donating copies to schools & community
-        centers!
+        requesting them at libraries, or donating copies to schools and
+        community centers!
       </p>
+      <h3>Login to find stories!</h3>
       <form>
-      <h4>Login to find stories!</h4>
         <label htmlFor="username">Enter your username: </label>
         <input
           id="username"
@@ -95,8 +122,8 @@ const Login = (props) => {
         <label htmlFor="purpose">Are you looking for mirrors or windows?</label>
         <select id="purpose" onChange={(e) => setPurpose(e.target.value)}>
           <option value="''">- Please share why you are here -</option>
-          <option value="Mirrors">Mirrors</option>
-          <option value="Windows">Windows</option>
+          <option value="mirrors">Mirrors</option>
+          <option value="windows">Windows</option>
         </select>
         <p>{error}</p>
         <Link to={checkInputs() ? "/Books" : "/"}>
@@ -105,6 +132,10 @@ const Login = (props) => {
       </form>
     </Wrapper>
   );
+};
+
+Login.propTypes = {
+  setUser: PropTypes.func,
 };
 
 export default Login;
