@@ -1,7 +1,8 @@
 import { fetchIsbns, fetchTitles } from "../../apiCalls";
 import { GlobalStyle, theme } from "../../theme/globalStyle";
-import { Route } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import BookContainer from "../BookContainer/BookContainer";
+import Error from "../Error/Error";
 import Header from "../Header/Header";
 import Login from "../Login/Login";
 import React, { Component } from "react";
@@ -89,20 +90,24 @@ class App extends Component {
       <ThemeProvider theme={theme}>
         <Wrapper>
           <Header user={this.state.user} resetUser={this.resetUser} />
-          <Route
-            exact
-            path="/"
-            render={() => {
-              return <Login setUser={this.setUser} />;
-            }}
-          />
-          <Route
-            exact
-            path="/Books"
-            render={() => {
-              return <BookContainer bookInfo={this.state.bookInfo} />;
-            }}
-          />
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => {
+                return <Login setUser={this.setUser} />;
+              }}
+            />
+            <Route
+              exact
+              path="/Books"
+              render={() => {
+                return <BookContainer bookInfo={this.state.bookInfo} />;
+              }}
+            />
+            <Route path="/error" render={() => <Error />} />
+            <Redirect to="/error" />
+          </Switch>
         </Wrapper>
         <GlobalStyle />
       </ThemeProvider>
