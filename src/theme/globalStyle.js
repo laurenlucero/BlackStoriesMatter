@@ -9,8 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   
-  html,
-  #root {
+  html {
     height: 100%;
     width: 100%;
   }
