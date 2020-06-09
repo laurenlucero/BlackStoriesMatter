@@ -30,14 +30,15 @@ class App extends Component {
     };
   }
 
+  
   componentDidMount = () => {
     this.state.authors.map(async (a) => {
       await fetchIsbns(a[0], a[1])
-        .then((result) =>
-          this.setState({ allIsbns: [...this.state.allIsbns, ...result] })
-        )
-        .then(() => this.getTitles())
-        .catch((error) => console.log("error", error));
+      .then((result) =>
+      this.setState({ allIsbns: [...this.state.allIsbns, ...result] })
+      )
+      .then(() => this.getTitles())
+      .catch((error) => console.log("error", error));
     });
   };
 
