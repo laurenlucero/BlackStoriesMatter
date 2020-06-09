@@ -1,68 +1,30 @@
+# Black Stories Matter
+Turing School of Software & Design Module 3 Final Solo Project
+
+## Project Goals and Requirements
+- The goal of this project was to demonstrate project professionalism and mastery of the following technologies:
+    - React
+    - Router
+    - Asynchronous JavaScript
+    - styled-componenents
+    - Testing
+- We were required to use an open API that did not require OAuth or have CORS and choose an audience. I chose to use the Penguin Random House Rest Services API to get data about books and authors.
+   - My goal was to showcase books by Black authors with a focus on children's literature. The audience is educators, families and youth. Black users can find “Mirrors”, stories they see themselves in. Other users visit for “Windows”, stories that give them a look into another experience. 
+- Users needed to be able to manipulate the data. My application displays titles, authors and illustrators from the API. Users can favorite books and filter by author.
+
+## Wins
+This current iteration of this project is a proof of concept that I will continue building on. I deepened my understanding of React architecture, Router, Asynchronous JavaScript, styled-components and testing. This project was designed mobile-first and has an accessibility score of 100.
+
+## Challenges
+Working with the available book APIs to get the data I wanted was my biggest roadblock. Unfortunately, many of the authors I wanted to showcase were not available since the API only had author's published by Random House. I was unable to get cover images of the books through the available APIs. I also have room to expand my testing, specifically asynchronous functionality and sad paths, and would like to refactor to improve performance. 
+
+## Future Iterations
+This project piqued my interest in building my own API. I want to create a database of Black children's books and authors that includes titles, authors, illustrators, cover images, summaries, age ranges, genres and links to author websites.
+Future iterations will have more informative and visually pleasing book previews. Users will be able to filter not only by author but also by illustrator, age range and genre. Users will be able to add books to a reading list as well as mark favorites. I also want to create digital wireframes for this project and include media queries for desktop display.
+
+## Installation
+Clone this repo into an empty directory on your local machine.
+Run npm install in your teminal to install the project's dependencies.
+Run npm start to run the application in development mode.
+Visit http://localhost:3000 to view in the browser.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
