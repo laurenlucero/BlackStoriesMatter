@@ -120,8 +120,8 @@ const Login = (props) => {
         <label htmlFor="purpose">Are you looking for mirrors or windows?</label>
         <select id="purpose" onChange={(e) => setPurpose(e.target.value)}>
           <option value="''">- Please share why you are here -</option>
-          <option value="Mirrors">Mirrors</option>
-          <option value="Windows">Windows</option>
+          <option value="Mirrors">mirrors</option>
+          <option value="Windows">windows</option>
         </select>
         <p>{error}</p>
         <Link to={checkInputs() ? "/Books" : "/"}>

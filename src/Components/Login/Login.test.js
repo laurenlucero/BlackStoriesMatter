@@ -52,7 +52,7 @@ describe("Login", () => {
     });
     fireEvent.change(
       getByLabelText("Are you looking for mirrors or windows?"),
-      { target: { value: "Windows" } }
+      { target: { value: "windows" } }
     );
     fireEvent.click(getByText("Login"));
     expect(mockSetUser).toHaveBeenCalledTimes(1);
