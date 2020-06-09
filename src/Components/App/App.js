@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import { fetchIsbns, fetchTitles } from "../../apiCalls";
+import { GlobalStyle, theme } from "../../theme/globalStyle";
+import { Route } from "react-router-dom";
+import BookContainer from "../BookContainer/BookContainer";
 import Header from "../Header/Header";
 import Login from "../Login/Login";
-import BookContainer from "../BookContainer/BookContainer";
+import React, { Component } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import { GlobalStyle, theme } from "../../theme/globalStyle";
-import { fetchIsbns, fetchTitles } from "../../apiCalls";
-import { Route } from "react-router-dom";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -30,15 +30,14 @@ class App extends Component {
     };
   }
 
-  
   componentDidMount = () => {
     this.state.authors.map(async (a) => {
       await fetchIsbns(a[0], a[1])
-      .then((result) =>
-      this.setState({ allIsbns: [...this.state.allIsbns, ...result] })
-      )
-      .then(() => this.getTitles())
-      .catch((error) => console.log("error", error));
+        .then((result) =>
+          this.setState({ allIsbns: [...this.state.allIsbns, ...result] })
+        )
+        .then(() => this.getTitles())
+        .catch((error) => console.log("error", error));
     });
   };
 

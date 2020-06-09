@@ -12,17 +12,17 @@ const Wrapper = styled.div`
   margin: 1em;
 `;
 
-const BookPreview = (props) => {
+const BookPreview = ({ title, authorName, id, favorite, toggleFavorites }) => {
   return (
     <Wrapper>
-      <p>{props.title}</p> <br />
-      <p>{props.authorName}</p>
-      {props.favorite ? (
+      <p>{title}</p> <br />
+      <p>{authorName}</p>
+      {favorite ? (
         <div>
           <MdStar
             color="black"
             fontSize="40"
-            onClick={() => props.toggleFavorites(props.id)}
+            onClick={() => toggleFavorites(id)}
           />
         </div>
       ) : (
@@ -30,7 +30,7 @@ const BookPreview = (props) => {
           <MdStarOutline
             color="black"
             fontSize="40"
-            onClick={() => props.toggleFavorites(props.id)}
+            onClick={() => toggleFavorites(id)}
           />
         </div>
       )}
@@ -42,7 +42,6 @@ BookPreview.propTypes = {
   book: PropTypes.object,
   favorite: PropTypes.bool,
   id: PropTypes.string,
-  key: PropTypes.string,
   toggleFavorites: PropTypes.func,
 };
 

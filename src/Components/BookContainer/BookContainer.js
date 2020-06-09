@@ -18,6 +18,7 @@ const Wrapper = styled.div`
     box-shadow: 1px 1px 1px ${black};
     cursor: pointer;
     padding: 0.5em;
+    margin: 0.5em;
   }
 `;
 
@@ -25,36 +26,15 @@ class BookContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filteredByAuthor: [],
       favorites: [],
       favoritesIds: [],
+      filteredByAuthor: [],
       useFavorites: false,
     };
   }
 
-  handleChange = (e) => {
-    if (e.target.value === "All") {
-      return this.setState({
-        filteredByAuthor: [...this.props.bookInfo],
-        useFavorites: false,
-      });
-    }
-    if (e.target.value === "Favorites") {
-      return this.displayFavorites();
-    }
-    let filteredAuthors = this.props.bookInfo.filter((book) => {
-      if (book.authorName.includes(e.target.value)) {
-        return book;
-      }
-    });
-    this.setState({
-      filteredByAuthor: [...filteredAuthors],
-      useFavorites: false,
-    });
-  };
-
   toggleFavorites = (id) => {
-    if (!this.state.favorites.includes(id)) {
+    if (!this.state.favoritesIds.includes(id)) {
       this.setState({ favoritesIds: [...this.state.favoritesIds, id] });
     } else {
       let newFavoritesIds = this.state.favoritesIds.filter((favorite) => {
@@ -80,24 +60,55 @@ class BookContainer extends Component {
     this.setState({ favorites: matchedBooks, useFavorites: true });
   };
 
+  handleChange = (e) => {
+    if (e.target.value === "All") {
+      return this.setState({
+        filteredByAuthor: [...this.props.bookInfo],
+        useFavorites: false,
+      });
+    }
+    if (e.target.value === "Favorites") {
+      return this.displayFavorites();
+    }
+    let filteredAuthors = this.props.bookInfo.filter((book) => {
+      if (book.authorName.includes(e.target.value)) {
+        return book;
+      }
+    });
+    this.setState({
+      filteredByAuthor: [...filteredAuthors],
+      useFavorites: false,
+    });
+  };
+
   render() {
     let data;
+    let books = null;
     if (!this.state.useFavorites) {
       data = this.state.filteredByAuthor;
     } else if (this.state.useFavorites) {
       data = this.state.favorites;
     }
-    const books = data.map((book) => {
-      return (
-        <BookPreview
-          {...book}
-          favorite={this.favorite}
-          id={book.isbn}
-          key={book.isbn}
-          toggleFavorites={this.toggleFavorites}
-        />
-      );
-    });
+    if (data.length === 0) {
+      books = <p>Star a book to add to your favorites!</p>;
+    } else {
+      books = data.map((book) => {
+        let favorite = false;
+        this.state.favoritesIds.forEach((id) => {
+          if (book.id === id) {
+            favorite = true;
+          }
+        });
+        return (
+          <BookPreview
+            {...book}
+            favorite={favorite}
+            key={book.id}
+            toggleFavorites={this.toggleFavorites}
+          />
+        );
+      });
+    }
     return (
       <Wrapper>
         <div>
