@@ -16,7 +16,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Ubuntu', sans-serif;;
+    background: #FFFDEA;
+    color: #0B0C20;
+    font-family: 'Ubuntu', sans-serif;
   }
 
   h1 {
@@ -26,8 +28,9 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const theme = {
-  background: "#fff255",
-  text: "#0B0C20",
-  complement: "#5562FF", 
+  blue: "#5562FF",
+  error: "#FF5562",
   light: "#FFFDEA",
+  text: "#0B0C20",
+  yellow: "#fff255",
 };
