@@ -3,7 +3,14 @@ import { theme } from "../../theme/globalStyle";
 import React from "react";
 import styled from "styled-components";
 
-const { black, yellow } = theme;
+const { black, white, yellow } = theme;
+
+const Wrapper = styled.div`
+  background: ${black};
+  color: ${white};
+  width: 100%;
+  padding: 0.5em;
+`;
 
 const UserMessage = styled.div`
   align-items: center;
@@ -15,8 +22,8 @@ const UserMessage = styled.div`
   button {
     background: ${yellow};
     border-radius: 5px;
-    box-shadow: 2px 2px 2px ${black};
-    border: solid ${black} 0.5px;
+    box-shadow: 1px 1px 1px ${white};
+    border: none;
     cursor: pointer;
     font-family: "Ubuntu", sans-serif;
     font-weight: bold;
@@ -42,10 +49,10 @@ const Header = (props) => {
   };
 
   return (
-    <div>
+    <Wrapper>
       <h1>Black Stories Matter</h1>
       {props.user && userMessage()}
-    </div>
+    </Wrapper>
   );
 };
 
