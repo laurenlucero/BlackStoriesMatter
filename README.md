@@ -23,7 +23,6 @@ This project piqued my interest in building my own API. I want to create a datab
 Future iterations will have more informative and visually pleasing book previews. Users will be able to filter not only by author but also by illustrator, age range and genre. Users will be able to add books to a reading list as well as mark favorites. I also want to create digital wireframes for this project and include media queries for desktop display.
 
 ## Proof of Concept in Action
-![screenshot]()
 ![gif](https://media.giphy.com/media/SXCY6nu8Xszv4u9qUm/giphy.gif)
 
 ## Installation
