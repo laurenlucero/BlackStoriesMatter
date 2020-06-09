@@ -1,12 +1,5 @@
 import "@testing-library/jest-dom/extend-expect";
-import {
-  cleanup,
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-  getByTestId,
-} from "@testing-library/react";
+import { cleanup, fireEvent, render, waitFor } from "@testing-library/react";
 import { MemoryRouter as Router } from "react-router-dom";
 import * as React from "react";
 import App from "./App";
@@ -55,12 +48,7 @@ describe("App", () => {
   });
 
   it.skip("should render book previews for selected option", async () => {
-    const {
-      getByText,
-      getByLabelText,
-      getByPlaceholderText,
-      getByTestId,
-    } = render(
+    const { getByText, getByLabelText, getByPlaceholderText } = render(
       <Router>
         <App />
       </Router>

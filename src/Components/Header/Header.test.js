@@ -6,6 +6,7 @@ import React from "react";
 
 describe("Header", () => {
   afterEach(cleanup);
+
   it("should render Header", () => {
     const { getByText } = render(
       <Router>

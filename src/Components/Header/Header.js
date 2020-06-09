@@ -39,7 +39,8 @@ const Header = (props) => {
     return (
       <UserMessage>
         <p>
-          Welcome, {props.user.username}. <br /> We hope you find {props.user.purpose} in our stories!
+          Welcome, {props.user.username}. <br /> We hope you find{" "}
+          {props.user.purpose} in our stories!
         </p>
         <Link to="/">
           <button onClick={() => props.resetUser()}>Logout</button>
