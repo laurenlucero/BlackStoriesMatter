@@ -1,34 +1,48 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { theme } from "../../theme/globalStyle";
+
+const { blue, error, light, text, yellow } = theme;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0.5em;
+  align-items: center;
+  justify-content: center;
 
-  h2, h3 {
-    margin-bottom: .5em;
+  h2,
+  h3 {
+    margin-bottom: 0.5em;
   }
 
   p {
     margin: 0.2em;
   }
 
-form {
-  border: solid black 2px;
-  justify-content: center;
-}
+  form {
+    border: solid ${text} 1px;
+    border-radius: 2px;
+    width: 75%;
+  }
+
+  label {
+    margin: 0.2em;
+  }
 
   input {
     border: none;
-    padding: .2em;
-    margin: .2em;
+    padding: 0.2em;
   }
 
   button {
     border: none;
   }
+`;
+
+const Error = styled.p`
+  color: ${blue};
 `;
 
 const Login = (props) => {
@@ -73,7 +87,7 @@ const Login = (props) => {
         centers!
       </p>
       <form>
-      <h4>Login to find stories!</h4>
+        <h4>Login to find stories!</h4>
         <label htmlFor="username">Enter your username: </label>
         <input
           id="username"
@@ -98,7 +112,7 @@ const Login = (props) => {
           <option value="Mirrors">Mirrors</option>
           <option value="Windows">Windows</option>
         </select>
-        <p>{error}</p>
+        <Error>{error}</Error>
         <Link to={checkInputs() ? "/Books" : "/"}>
           <button onClick={handleClick}>Login</button>
         </Link>

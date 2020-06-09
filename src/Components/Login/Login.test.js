@@ -13,7 +13,7 @@ describe("Login", () => {
         <Login />
       </Router>
     );
-    expect(getByText("Welcome to Black Stories Matter!")).toBeInTheDocument();
+    expect(getByText("Welcome to BSM!")).toBeInTheDocument();
     expect(getByLabelText("Enter your username:")).toBeInTheDocument();
   });
 
