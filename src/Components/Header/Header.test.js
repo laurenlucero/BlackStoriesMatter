@@ -1,8 +1,8 @@
-import React from "react";
-import Header from "./Header";
-import { cleanup, fireEvent, render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
+import { cleanup, fireEvent, render } from "@testing-library/react";
 import { MemoryRouter as Router } from "react-router-dom";
+import Header from "./Header";
+import React from "react";
 
 describe("Header", () => {
   afterEach(cleanup);

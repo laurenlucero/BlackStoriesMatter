@@ -1,8 +1,8 @@
-import React from "react";
-import Login from "./Login";
-import { cleanup, fireEvent, render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
+import { cleanup, fireEvent, render } from "@testing-library/react";
 import { MemoryRouter as Router } from "react-router-dom";
+import Login from "./Login";
+import React from "react";
 
 describe("Login", () => {
   afterEach(cleanup);

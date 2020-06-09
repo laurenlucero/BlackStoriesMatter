@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import BookPreview from "../BookPreview/BookPreview";
-import styled from "styled-components";
 import { theme } from "../../theme/globalStyle";
+import BookPreview from "../BookPreview/BookPreview";
+import React, { Component } from "react";
+import styled from "styled-components";
 
-const { black, grey, orange, white, yellow } = theme;
+const { black, white } = theme;
 
 const Wrapper = styled.div`
   display: flex;

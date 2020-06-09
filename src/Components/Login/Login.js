@@ -1,9 +1,9 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
 import { theme } from "../../theme/globalStyle";
+import React, { useState } from "react";
+import styled from "styled-components";
 
-const { black, grey, orange, white, yellow } = theme;
+const { black, white, yellow } = theme;
 
 const Wrapper = styled.div`
   align-items: center;

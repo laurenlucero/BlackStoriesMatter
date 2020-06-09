@@ -1,9 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
 import { theme } from "../../theme/globalStyle";
+import React from "react";
+import styled from "styled-components";
 
-const { black, grey, orange, white, yellow } = theme;
+const { black, yellow } = theme;
 
 const UserMessage = styled.div`
   align-items: center;
