@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { theme } from "../../theme/globalStyle";
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import styled from "styled-components";
 
@@ -129,6 +130,10 @@ const Login = (props) => {
       </form>
     </Wrapper>
   );
+};
+
+Login.propTypes = {
+  setUser: PropTypes.func,
 };
 
 export default Login;

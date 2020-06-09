@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { theme } from "../../theme/globalStyle";
+import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 
@@ -54,6 +55,11 @@ const Header = (props) => {
       {props.user && userMessage()}
     </Wrapper>
   );
+};
+
+Header.propTypes = {
+  user: PropTypes.object,
+  resetUser: PropTypes.func,
 };
 
 export default Header;

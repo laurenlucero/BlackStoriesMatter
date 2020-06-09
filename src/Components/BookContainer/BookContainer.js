@@ -1,5 +1,6 @@
 import { theme } from "../../theme/globalStyle";
 import BookPreview from "../BookPreview/BookPreview";
+import PropTypes from "prop-types";
 import React, { Component } from "react";
 import styled from "styled-components";
 
@@ -89,10 +90,10 @@ class BookContainer extends Component {
     const books = data.map((book) => {
       return (
         <BookPreview
-          key={book.isbn}
-          id={book.isbn}
           {...book}
           favorite={this.favorite}
+          id={book.isbn}
+          key={book.isbn}
           toggleFavorites={this.toggleFavorites}
         />
       );
@@ -123,5 +124,9 @@ class BookContainer extends Component {
     );
   }
 }
+
+BookContainer.propTypes = {
+  bookInfo: PropTypes.array,
+};
 
 export default BookContainer;

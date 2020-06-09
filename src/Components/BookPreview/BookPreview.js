@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import styled from "styled-components";
 import MdStar from "react-ionicons/lib/MdStar";
 import MdStarOutline from "react-ionicons/lib/MdStarOutline";
-import { theme } from "../../theme/globalStyle";
-
-const { black, grey, orange, white, yellow } = theme;
+import PropTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   align-items: flex-start;
@@ -22,7 +20,7 @@ const BookPreview = (props) => {
       {props.favorite ? (
         <div>
           <MdStar
-            color="${black}"
+            color="black"
             fontSize="40"
             onClick={() => props.toggleFavorites(props.id)}
           />
@@ -30,7 +28,7 @@ const BookPreview = (props) => {
       ) : (
         <div>
           <MdStarOutline
-            color="${black}"
+            color="black"
             fontSize="40"
             onClick={() => props.toggleFavorites(props.id)}
           />
@@ -38,6 +36,14 @@ const BookPreview = (props) => {
       )}
     </Wrapper>
   );
+};
+
+BookPreview.propTypes = {
+  book: PropTypes.object,
+  favorite: PropTypes.bool,
+  id: PropTypes.string,
+  key: PropTypes.string,
+  toggleFavorites: PropTypes.func,
 };
 
 export default BookPreview;
