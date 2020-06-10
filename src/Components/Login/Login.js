@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const { black, white, yellow } = theme;
+const { black, red, white, yellow } = theme;
 
 const Wrapper = styled.div`
   align-items: center;
@@ -56,6 +56,10 @@ const Wrapper = styled.div`
     margin-bottom: 0.2em;
     padding: 0.5em;
   }
+`;
+
+const Error = styled.p`
+  color: ${red};
 `;
 
 const Login = (props) => {
@@ -115,7 +119,7 @@ const Login = (props) => {
           id="password"
           name="password"
           placeholder="password"
-          type="text"
+          type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
         <br />
@@ -125,7 +129,7 @@ const Login = (props) => {
           <option value="mirrors">Mirrors</option>
           <option value="windows">Windows</option>
         </select>
-        <p>{error}</p>
+        <Error>{error}</Error>
         <Link to={checkInputs() ? "/Books" : "/"}>
           <button onClick={handleClick}>Login</button>
         </Link>

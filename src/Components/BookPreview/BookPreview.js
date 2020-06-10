@@ -1,5 +1,5 @@
-import MdStar from "react-ionicons/lib/MdStar";
-import MdStarOutline from "react-ionicons/lib/MdStarOutline";
+import MdHeart from "react-ionicons/lib/MdHeart";
+import MdHeartOutline from "react-ionicons/lib/MdHeartOutline";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
@@ -19,15 +19,15 @@ const BookPreview = ({ title, authorName, id, favorite, toggleFavorites }) => {
       <p>{authorName}</p>
       {favorite ? (
         <div>
-          <MdStar
-            color="black"
+          <MdHeart
+            color="#FF2243"
             fontSize="40"
             onClick={() => toggleFavorites(id)}
           />
         </div>
       ) : (
         <div>
-          <MdStarOutline
+          <MdHeartOutline
             color="black"
             fontSize="40"
             onClick={() => toggleFavorites(id)}

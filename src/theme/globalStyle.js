@@ -28,6 +28,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const theme = {
   black: "#1D1E22",
+  red: "#FF2243",
   white: "#FFFFFF",
   yellow: "#FFDE22",
 };
