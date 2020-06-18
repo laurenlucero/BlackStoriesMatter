@@ -1,5 +1,11 @@
 language: node_js
 node_js:
-  - "node"
+  - node
 notifications:
   email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: iHTvkhSW8WJZcq69lX6hUz5lpu7CjwVRXkjjel6E1qo+8tjhB0f5/fAfeY1E3SCmWJzDGOfp/DmUpX5uyj2q91IBXCWwdKboggesqnDnN1r9qEiBVMyuTSWDFA9zGdP9nHiHn7s3vbWB9nX60yst8IzPwPxJwBtxm6jrEu3KPuKAxwB2Xm0gQ+hxE5d2MLxM9LpOT98IwL8UlIu1UdyBsiG2UsPItb616MfR+njt0dbAcORDd2yNUQOg9+JaIXJzAPV9Kw35EBPwpCLBrHJqDG2SrIxdP7Xo2V8ybFd9aFggFyUR/Yy8J/C0jEckbBBNvWfZkzhrklHCW4W1PTc+Jfvh9DhVSrELr+b0jn5PVJ3rZmnZQ3Q0UG9OTFdtJZ9zHABsq76bhtgkD3SlLdGINSk9SuSBufKhzsR1egve9x/n4dLep8wuwIXxLBxUN0Mw/fkO4joaYXt9Z1ppKdXmMjdkHHDgKmKeuIV/SFn/h1epw76SEQOIUvwRd7j9cVPo4cVDzcNt2BaeIYTXcrxV/eAaX1EiKNmfiqvEvId2TQPww+ahVhHqf4potZrRrSCnh3b96saeh7ALBbOqtkzNl5Hu47bx5wtHktlBj+WclnfIkx5uFiNr9YPKaMN3Avpn+UL4jknIsCb4Bik0rhQqOZg3ofOSIaMsr7hhE/w5nq4=
+  app: black-stories-matter
+  skip_cleanup: true
