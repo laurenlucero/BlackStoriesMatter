@@ -47,29 +47,4 @@ describe("App", () => {
     expect(logoutBtn).toBeInTheDocument();
   });
 
-  it.skip("should render book previews for selected option", async () => {
-    const { getByText, getByLabelText, getByPlaceholderText } = render(
-      <Router>
-        <App />
-      </Router>
-    );
-    fireEvent.change(getByPlaceholderText("username"), {
-      target: { value: "lauren_reads" },
-    });
-    fireEvent.change(getByPlaceholderText("password"), {
-      target: { value: "abc123" },
-    });
-    fireEvent.change(
-      getByLabelText("Are you looking for mirrors or windows?"),
-      { target: { value: "windows" } }
-    );
-    fireEvent.click(getByText("Login"));
-    const filter = await waitFor(() => getByLabelText("Filter books:"));
-    expect(filter).toBeInTheDocument();
-    await selectEvent.select(getByLabelText("Filter books:"), [
-      "Angela Johnson",
-    ]);
-    const bookPreview = await waitFor(() => getByText("VIOLET'S MUSIC"));
-    expect(bookPreview).toBeInTheDocument();
-  });
 });
