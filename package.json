@@ -42,5 +42,8 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^10.2.1",
     "react-select-event": "^4.1.4"
+  },
+  "engines": {
+    "node": "12.16.2"
   }
 }
