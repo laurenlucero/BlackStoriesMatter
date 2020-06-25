@@ -1,10 +1,19 @@
-language: node_js
-node_js:
-- node
-notifications:
-  email: false
-deploy:
-  provider: heroku
-  api_key:
-    secure: DyNKbT8H2ZGIjRamGVJ+0nqttv0QiOJAKR0ojQLCS+pE2KVrCa1bftDzSnURoGfilZ0TvyYmfIHQRCI3mtiNIh4/sT64jvA+GHlRdGqd+PJ4yJr7UOJZFVIvH1cfT82M6p4+l8vVuxAaPybhwCmDm7MdW6mnJvEaHfES8zNFmmtgGBB91+z9Z+ysx0q19oD8p+BiVG4impxJdw5mI3hdlcTIt8OiQvWj/JYjKYIILZgQSO/r0gDjB6qdlbJhzFdhEyl4xILDax5qQ31NI2ft4mpVq18vr+BWAPpFhf/YYuq7S+ZtF3ynD/AMDwa41Up2fCSOo+0VbmtkbNn5l02Cic2Uhi2pDDi8r1zOX/w7PCsvxqs/ZrJ099CQE+88D0bDJRuLUgcIF55nzFt61nXvzdy6HuKxkKpRH4Ch30o4LKTte0sa/i0EqPeJXb4UWrHI1HUo6UTK7JHXiE2Zybeq5eGco1IdRk5rZoOS9GF+iiI0fHjIhFbg6i1QY28fq1uLYuko1p7XlKAqiP/sbrRatj646g3rSStwyvUGhHF1c/8Fo0ZdwvcdNuIgucKE6l/5EM1xQ1NONr2ZmudpQO5Okcua69SDax1b5iFKqD9LtIB6StG/5JwmnRG24PjForO6idDpJRELZSpb28CD/huSpj3oOnROo0b5VSwyKzLSNxc=
-  app: black-stories-matter
+{
+  "language": "node_js",
+  "os": ["linux"],
+  "dist": "xenial",
+  "node_js": ["node"],
+  "notifications": { "email": [{ "enabled": false }] },
+  "deploy":
+    [
+      {
+        "provider": "heroku",
+        "strategy": "api",
+        "api_key":
+          {
+            "secure": "DyNKbT8H2ZGIjRamGVJ+0nqttv0QiOJAKR0ojQLCS+pE2KVrCa1bftDzSnURoGfilZ0TvyYmfIHQRCI3mtiNIh4/sT64jvA+GHlRdGqd+PJ4yJr7UOJZFVIvH1cfT82M6p4+l8vVuxAaPybhwCmDm7MdW6mnJvEaHfES8zNFmmtgGBB91+z9Z+ysx0q19oD8p+BiVG4impxJdw5mI3hdlcTIt8OiQvWj/JYjKYIILZgQSO/r0gDjB6qdlbJhzFdhEyl4xILDax5qQ31NI2ft4mpVq18vr+BWAPpFhf/YYuq7S+ZtF3ynD/AMDwa41Up2fCSOo+0VbmtkbNn5l02Cic2Uhi2pDDi8r1zOX/w7PCsvxqs/ZrJ099CQE+88D0bDJRuLUgcIF55nzFt61nXvzdy6HuKxkKpRH4Ch30o4LKTte0sa/i0EqPeJXb4UWrHI1HUo6UTK7JHXiE2Zybeq5eGco1IdRk5rZoOS9GF+iiI0fHjIhFbg6i1QY28fq1uLYuko1p7XlKAqiP/sbrRatj646g3rSStwyvUGhHF1c/8Fo0ZdwvcdNuIgucKE6l/5EM1xQ1NONr2ZmudpQO5Okcua69SDax1b5iFKqD9LtIB6StG/5JwmnRG24PjForO6idDpJRELZSpb28CD/huSpj3oOnROo0b5VSwyKzLSNxc=",
+          },
+        "app": "black-stories-matter",
+      },
+    ],
+}
