@@ -1,18 +1,19 @@
-language: node_js
-os:
-- linux
-dist: xenial
-node_js:
-- node
-notifications:
-  email:
-  - enabled: false
-deploy:
-  matrix:
-  - provider: heroku
-    strategy: api
-    api_key:
-      secure: DyNKbT8H2ZGIjRamGVJ+0nqttv0QiOJAKR0ojQLCS+pE2KVrCa1bftDzSnURoGfilZ0TvyYmfIHQRCI3mtiNIh4/sT64jvA+GHlRdGqd+PJ4yJr7UOJZFVIvH1cfT82M6p4+l8vVuxAaPybhwCmDm7MdW6mnJvEaHfES8zNFmmtgGBB91+z9Z+ysx0q19oD8p+BiVG4impxJdw5mI3hdlcTIt8OiQvWj/JYjKYIILZgQSO/r0gDjB6qdlbJhzFdhEyl4xILDax5qQ31NI2ft4mpVq18vr+BWAPpFhf/YYuq7S+ZtF3ynD/AMDwa41Up2fCSOo+0VbmtkbNn5l02Cic2Uhi2pDDi8r1zOX/w7PCsvxqs/ZrJ099CQE+88D0bDJRuLUgcIF55nzFt61nXvzdy6HuKxkKpRH4Ch30o4LKTte0sa/i0EqPeJXb4UWrHI1HUo6UTK7JHXiE2Zybeq5eGco1IdRk5rZoOS9GF+iiI0fHjIhFbg6i1QY28fq1uLYuko1p7XlKAqiP/sbrRatj646g3rSStwyvUGhHF1c/8Fo0ZdwvcdNuIgucKE6l/5EM1xQ1NONr2ZmudpQO5Okcua69SDax1b5iFKqD9LtIB6StG/5JwmnRG24PjForO6idDpJRELZSpb28CD/huSpj3oOnROo0b5VSwyKzLSNxc=
-    app: black-stories-matter
-  api_key:
-    secure: 2sB98hHqNPQkFtn2vjeA8l2WtXXNdC005+4a0Y/Jzpk6pQ2mF6HR0A2wkenEIL5qVggkgRUNPNuChkGQ1DSGyEudmzitxrgYPn7/GUQostbTw4qzGrHp2Qz+EUnrSVlztu5gzQXrY4jyyx9hkZe6GS4QcFeTCE3DjX2KqWrA88LS6+wpZI1OTP+9x63iy+z7ZLVyOSMjnoTN+yHa9NShWI2uh96F6lv3+OsOaVj5iipsTUcq74rFYUKScyzI6vNEeFs51RmZS5lrJ/NQDhd1eo6ApKLghmzp1QqXgnjCiu86zcX8Y77NmX8vTcyhs1CYSZ281yWTcnh6IIWj6jdFuQU1trv9hUMfyO4AlW/MXN72cPYre7+79oYgfjYTYGOshhBOAqhn9RYuOD0WKmFgeylez0t7hlPXFghZtWv7DD1Ny0Vj1V6PH295xii3UtCl7yUOe5NNR7JEsKtEwwsEaDcE8yWBrXVbyDuudj3Kik0QJX8+4BAwKH1v52Xloparw1qfW58W0sb5aF7TkFKA8V9BIZfRZcJYHHxYIE/zaS9PbaL1XP2Fn8yZP9JF1k+xslrSrUM6uAcPKoOPC6QivLot9RGxmyXgwapzV/A2VFnMod5MrIFJsXmL3MIx5aDZKA8VM8qn+++EWl6NrIu82hXptwJ1NG/ZN1cPj2bsazY=
+{
+  "language": "node_js",
+  "os": ["linux"],
+  "dist": "xenial",
+  "node_js": ["node"],
+  "notifications": { "email": [{ "enabled": false }] },
+  "deploy":
+    [
+      {
+        "provider": "heroku",
+        "strategy": "api",
+        "api_key":
+          {
+            "secure": "DyNKbT8H2ZGIjRamGVJ+0nqttv0QiOJAKR0ojQLCS+pE2KVrCa1bftDzSnURoGfilZ0TvyYmfIHQRCI3mtiNIh4/sT64jvA+GHlRdGqd+PJ4yJr7UOJZFVIvH1cfT82M6p4+l8vVuxAaPybhwCmDm7MdW6mnJvEaHfES8zNFmmtgGBB91+z9Z+ysx0q19oD8p+BiVG4impxJdw5mI3hdlcTIt8OiQvWj/JYjKYIILZgQSO/r0gDjB6qdlbJhzFdhEyl4xILDax5qQ31NI2ft4mpVq18vr+BWAPpFhf/YYuq7S+ZtF3ynD/AMDwa41Up2fCSOo+0VbmtkbNn5l02Cic2Uhi2pDDi8r1zOX/w7PCsvxqs/ZrJ099CQE+88D0bDJRuLUgcIF55nzFt61nXvzdy6HuKxkKpRH4Ch30o4LKTte0sa/i0EqPeJXb4UWrHI1HUo6UTK7JHXiE2Zybeq5eGco1IdRk5rZoOS9GF+iiI0fHjIhFbg6i1QY28fq1uLYuko1p7XlKAqiP/sbrRatj646g3rSStwyvUGhHF1c/8Fo0ZdwvcdNuIgucKE6l/5EM1xQ1NONr2ZmudpQO5Okcua69SDax1b5iFKqD9LtIB6StG/5JwmnRG24PjForO6idDpJRELZSpb28CD/huSpj3oOnROo0b5VSwyKzLSNxc=",
+          },
+        "app": "black-stories-matter",
+      },
+    ],
+}
