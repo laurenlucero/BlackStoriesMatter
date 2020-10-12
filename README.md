@@ -26,8 +26,8 @@ Future iterations will have more informative and visually pleasing book previews
 ![gif](https://media.giphy.com/media/kaZcKYzJgWRdDnIEje/giphy.gif)
 
 ## Installation
-Clone this repo into an empty directory on your local machine.
-Run npm install in your teminal to install the project's dependencies.
-Run npm start to run the application in development mode.
-Visit http://localhost:3000 to view in the browser.
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Clone this repo into an empty directory on your local machine.
+- Run npm install in your teminal to install the project's dependencies.
+- Run npm start to run the application in development mode.
+- Visit http://localhost:3000 to view in the browser.
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
